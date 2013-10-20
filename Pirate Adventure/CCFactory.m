@@ -21,7 +21,7 @@
     tile1.background = [UIImage imageNamed:@"PirateAttack.jpg"];
     
     CCTile *tile2 = [[CCTile alloc] init];
-    tile2.label = @"Tile 2";
+    tile2.label = @"There is armor somewhere in the world. Find it to become stronger.";
     tile2.background = [UIImage imageNamed:@"PirateBlacksmith.jpeg"];
     
     // Find a broad swowrd
@@ -45,19 +45,24 @@
 
     
     CCTile *tile5 = [[CCTile alloc] init];
-    tile5.label = @"Tile 5";
+    tile5.label = @"Some weapons are stronger than others.";
     tile5.background = [UIImage imageNamed:@"PirateOctopusAttack.jpg"];
     
     CCTile *tile6 = [[CCTile alloc] init];
-    tile6.label = @"Tile 6";
+    tile6.label = @"An evil pirate travels and eats the souls of young adventurers.";
     tile6.background = [UIImage imageNamed:@"PirateParrot.jpg"];
     
     CCTile *tile7 = [[CCTile alloc] init];
-    tile7.label = @"Tile 7";
+    CCWeapon *bowAndArrow = [[CCWeapon alloc] init];
+    bowAndArrow.damage = 15;
+    bowAndArrow.name = @"Bow & Arrows";
+    tile7.weapon = bowAndArrow;
+    tile7.actionButtonName = @"Take weapon";
+    tile7.label = @"You found a bow and arrows!";
     tile7.background = [UIImage imageNamed:@"PiratePlank.jpg"];
     
     CCTile *tile8 = [[CCTile alloc] init];
-    tile8.label = @"Tile 8";
+    tile8.label = @"Head back. The seas are dangerous.";
     tile8.background = [UIImage imageNamed:@"PirateShipBattle.jpeg"];
     
     // Find chain mail
@@ -71,17 +76,21 @@
     tile9.actionButtonName = @"Take the armor!";
     
     CCTile *tile10 = [[CCTile alloc] init];
-    tile10.label = @"Tile 10";
+    tile10.label = @"The enemy passed this area earlier.";
     tile10.background = [UIImage imageNamed:@"PirateTreasure.jpeg"];
     
     // Boss level
     CCTile *tile11 = [[CCTile alloc] init];
+    CCBoss *boss = [[CCBoss alloc] init];
+    boss.health = 200;
+    boss.damage = 20;
+    tile11.boss = boss;
     tile11.label = @"You have found the boss! Defeat the evil pirate.";
     tile11.background = [UIImage imageNamed:@"PirateTreasurer2.jpeg"];
     tile11.actionButtonName = @"Attack!";
     
     CCTile *tile12 = [[CCTile alloc] init];
-    tile12.label = @"Tile 12";
+    tile12.label = @"The enemy is near.";
     tile12.background = [UIImage imageNamed:@"PirateWeapons.jpeg"];
     
     // Create Columns
@@ -97,7 +106,7 @@
 // Create a Character
 -(CCCharacter *)createCharacter {
     CCCharacter *character = [[CCCharacter alloc] init];
-    character.health = 100;
+    character.health = 110;
     
     CCWeapon *weapon = [[CCWeapon alloc] init];
     weapon.name = @"Rusty Sword";

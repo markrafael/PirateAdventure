@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CCCharacter.h"
+#import "CCBoss.h"
 
 @interface CCFactory : NSObject
 
@@ -16,4 +17,5 @@
 
 -(NSArray *)startGameWithColumns:(int)columns AndRows:(int)rows;
 -(CCCharacter *)createCharacter;
+-(CCBoss *)createBoss;
 @end

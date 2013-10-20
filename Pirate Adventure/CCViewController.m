@@ -38,7 +38,10 @@
     [self createStartingPoint];
     
     self.mainCharacter = [pirateAdventureFactory createCharacter];
+    
     [self updateCurrentTile];
+    
+
 }
 
 // Create Starting Position -- TODO Make this Random
@@ -152,6 +155,28 @@
         self.mainCharacter.health += self.currentTile.armor.health;
         self.currentTile.armor.health = 0;
         self.currentTile.actionButtonName = @"You took the armor already!";
+    }
+    if (self.currentTile.boss != nil)
+    {
+        // Update Character/Boss Health
+        self.currentTile.boss.health -= self.mainCharacter.weapon.damage;
+        self.mainCharacter.health -= self.currentTile.boss.damage;
+        
+        // Alert if Character's Health <= 0 (This will always trump boss's health)
+        if (self.mainCharacter.health <= 0)
+        {
+            self.mainCharacter.health = 0; // Set to 0 so that we won't see a negative number in label
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Death" message:@"You have died. Restart the game to try again!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alertView show];
+        }
+        
+        // Alert if Boss's Health <= 0
+        if (self.currentTile.boss.health <= 0)
+        {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Victory" message:@"Congratulations. You have defeated ths boss! Restart the game to try again!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            
+            [alertView show];
+        }
     }
     [self updateCurrentTile];
 }

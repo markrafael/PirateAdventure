@@ -38,6 +38,7 @@
 		336999CB1813C5C600821A60 /* CCWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 336999CA1813C5C600821A60 /* CCWeapon.m */; };
 		336999CE1813C65D00821A60 /* CCArmor.m in Sources */ = {isa = PBXBuildFile; fileRef = 336999CD1813C65D00821A60 /* CCArmor.m */; };
 		336999D11813C6A600821A60 /* CCCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 336999D01813C6A600821A60 /* CCCharacter.m */; };
+		33F4D6CF1814765200FE03F5 /* CCBoss.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F4D6CE1814765200FE03F5 /* CCBoss.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,8 @@
 		336999CD1813C65D00821A60 /* CCArmor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCArmor.m; sourceTree = "<group>"; };
 		336999CF1813C6A600821A60 /* CCCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCharacter.h; sourceTree = "<group>"; };
 		336999D01813C6A600821A60 /* CCCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCharacter.m; sourceTree = "<group>"; };
+		33F4D6CD1814765200FE03F5 /* CCBoss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBoss.h; sourceTree = "<group>"; };
+		33F4D6CE1814765200FE03F5 /* CCBoss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBoss.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,11 +223,13 @@
 				333F77E9180D163C0046B3D1 /* CCTile.h */,
 				333F77EA180D163C0046B3D1 /* CCTile.m */,
 				336999C91813C5C600821A60 /* CCWeapon.h */,
+				336999CA1813C5C600821A60 /* CCWeapon.m */,
 				336999CC1813C65D00821A60 /* CCArmor.h */,
+				336999CD1813C65D00821A60 /* CCArmor.m */,
+				33F4D6CD1814765200FE03F5 /* CCBoss.h */,
+				33F4D6CE1814765200FE03F5 /* CCBoss.m */,
 				336999CF1813C6A600821A60 /* CCCharacter.h */,
 				336999D01813C6A600821A60 /* CCCharacter.m */,
-				336999CD1813C65D00821A60 /* CCArmor.m */,
-				336999CA1813C5C600821A60 /* CCWeapon.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 				333F77AF180D0C8F0046B3D1 /* CCViewController.m in Sources */,
 				336999CE1813C65D00821A60 /* CCArmor.m in Sources */,
 				336999CB1813C5C600821A60 /* CCWeapon.m in Sources */,
+				33F4D6CF1814765200FE03F5 /* CCBoss.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
