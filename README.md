@@ -1,4 +1,4 @@
-PirateAdventure
+PirateAdventure (10/2013)
 ===============
 This is an example project used to learn more about iOS Development. This includes learning about how certain concepts work in Objective-C such as OOP, MVC, data structures, storyboards, actions, etc.
 
