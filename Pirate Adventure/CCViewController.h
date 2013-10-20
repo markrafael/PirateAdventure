@@ -7,7 +7,37 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CCFactory.h"
+#import "CCTile.h"
 
 @interface CCViewController : UIViewController
+@property (strong, nonatomic) NSArray *pirateAdventure;
+@property (strong, nonatomic) CCCharacter *myCharacter;
+
+@property (nonatomic) CGPoint currentPosition;
+@property (nonatomic) int numberOfColumns;
+@property (nonatomic) int numberOfRows;
+
+@property (nonatomic) CCTile *currentTile;
+@property (strong, nonatomic) IBOutlet UIImageView *background;
+@property (strong, nonatomic) IBOutlet UILabel *storyLabel;
+@property (strong, nonatomic) IBOutlet UIButton *buttonNorth;
+@property (strong, nonatomic) IBOutlet UIButton *buttonSouth;
+@property (strong, nonatomic) IBOutlet UIButton *buttonWest;
+@property (strong, nonatomic) IBOutlet UIButton *buttonEast;
+
+-(void)createStartingPoint;
+-(void)updateCurrentTile;
+-(void)getTileByColumn:(int)column andRow:(int)row;
+-(void)updateValidDirections;
+-(void)moveCharacterInX:(int)x andY:(int)y;
+
+- (IBAction)buttonNorthPressed:(id)sender;
+- (IBAction)buttonSouthPressed:(id)sender;
+- (IBAction)buttonWestPressed:(id)sender;
+- (IBAction)buttonEastPressed:(id)sender;
+
+-(IBAction)resetButtonPressed:(UIButton *)sender;
+
 
 @end
