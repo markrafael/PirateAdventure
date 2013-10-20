@@ -17,5 +17,4 @@
 
 -(NSArray *)startGameWithColumns:(int)columns AndRows:(int)rows;
 -(CCCharacter *)createCharacter;
--(CCBoss *)createBoss;
 @end
