@@ -37,7 +37,7 @@
     self.pirateAdventure = [pirateAdventureFactory startGameWithColumns:4 AndRows:3];
     [self createStartingPoint];
     
-    self.myCharacter = [pirateAdventureFactory createCharacter];
+    self.mainCharacter = [pirateAdventureFactory createCharacter];
     [self updateCurrentTile];
 }
 
@@ -52,8 +52,30 @@
 -(void)updateCurrentTile
 {
     [self getTileByColumn:self.currentPosition.x andRow:self.currentPosition.y];
-    self.storyLabel.text = self.currentTile.label;
+    [self updateValidDirections];
+    // Update Background
     self.background.image = self.currentTile.background;
+    
+    // Update Character
+    self.healthNumber.text = [NSString stringWithFormat:@"%i",self.mainCharacter.health];
+    self.damageNumber.text = [NSString stringWithFormat:@"%i",self.mainCharacter.weapon.damage];
+    
+    self.weaponName.text = self.mainCharacter.weapon.name;
+    self.armorName.text = self.mainCharacter.armor.name;
+    
+    // Update Action
+    if (self.currentTile.actionButtonName != nil)
+    {
+        [self.actionButtonName setTitle:self.currentTile.actionButtonName forState:UIControlStateNormal];
+    }
+    else
+    {
+        [self.actionButtonName setTitle:@"No Action" forState:UIControlStateNormal];
+    }
+    
+    // Update Story
+    self.storyLabel.text = self.currentTile.label;
+
 }
 
 // Get Tile by Coordinates
@@ -111,7 +133,26 @@
 {
     // Add Validations
     self.currentPosition = CGPointMake(self.currentPosition.x + (float)x, self.currentPosition.y + (float)y);
-    [self updateValidDirections];
+
+    [self updateCurrentTile];
+}
+
+// Perform Action on Button
+- (IBAction)actionButtonPressed:(id)sender {
+    // Grab the Weapon
+    if (self.currentTile.weapon != nil)
+    {
+        self.mainCharacter.weapon = self.currentTile.weapon;
+        self.currentTile.actionButtonName = @"You took the weapon already!";
+    }
+    // Grab the Armor
+    if (self.currentTile.armor != nil)
+    {
+        self.mainCharacter.armor = self.currentTile.armor;
+        self.mainCharacter.health += self.currentTile.armor.health;
+        self.currentTile.armor.health = 0;
+        self.currentTile.actionButtonName = @"You took the armor already!";
+    }
     [self updateCurrentTile];
 }
 

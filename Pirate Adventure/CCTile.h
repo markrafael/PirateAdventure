@@ -7,8 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCWeapon.h"
+#import "CCArmor.h"
 
 @interface CCTile : NSObject
-@property (nonatomic, strong) UIImage *background;
-@property (nonatomic, strong) NSString *label;
+@property (strong, nonatomic) UIImage *background;
+@property (strong, nonatomic) NSString *label;
+@property (strong, nonatomic) CCWeapon *weapon;
+@property (strong, nonatomic) CCArmor *armor;
+@property (strong, nonatomic) NSString *actionButtonName;
 @end
